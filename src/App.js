@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {connect} from 'react-redux';
 
+@connect(state => {
+  return {
+    sadasd: state.testStore
+  }
+}, dispatch => {
+  return {
+
+  }
+})
 class App extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
