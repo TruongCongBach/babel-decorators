@@ -9,16 +9,29 @@ import {connect} from 'react-redux';
   }
 }, dispatch => {
   return {
-
+    changeTextBachRuoi: (text) => {
+      dispatch({
+        type: 'CHANGE_TEXT_BACH_RUOI',
+        text
+      })
+    }
   }
 })
+
+
+
 class App extends Component {
+
+  changeTextBachRuoi() {
+    this.props.changeTextBachRuoi('bach ruoi');
+  }
+
   render() {
     console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img onClick={this.changeTextBachRuoi.bind(this)} src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
